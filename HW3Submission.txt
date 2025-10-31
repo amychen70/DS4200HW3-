@@ -1,0 +1,15 @@
+﻿Mei Qi (Amy) Chen 
+DS4200 
+Section 04
+
+
+Repo Link: 
+https://github.com/amychen70/DS4200HW3-.git
+
+
+Website: 
+https://amychen70.github.io/DS4200HW3-/
+
+
+Customizations: 
+For the customizations, I created two separate CSS files with similar but slightly different formatting in each. For the first page, I made everything centered with the links to my social media and other pages on the left. I also changed the background color of both pages to a slightly tealish color as well as changed the fonts of both to Georgia. I didn’t want the pages to be too much towards the end of my screen so I also increased the padding of both pages to make the pages look neater and cleaner. In the second page, I did similar styling except I didn’t center the page this time. I made the heading of the page smaller than the home page and added a list to the paragraphs.
