@@ -1,0 +1,25 @@
+body {
+    font-family: 'Georgia';
+    padding: 30px;
+}
+
+
+
+h2, h3 {
+    font-family: 'Georgia';
+    font-weight: bold;
+}
+
+body {
+    background-color:rgb(206, 240, 240); 
+    color: black;           
+}
+
+div {
+    text-align: center
+}
+
+a {color: rgb(19, 146, 188);}
+
+a:hover {color:rgb(107, 107, 221);}
+

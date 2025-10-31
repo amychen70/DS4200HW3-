@@ -1,0 +1,251 @@
+//Define data
+let data = [
+  { name: 'Rainne'    , rating: 8 },
+  { name: 'Buddy'    , rating: 7 },
+  { name: 'Paddy'   , rating: 3 },
+  { name: 'Sticky', rating: 9 },
+  { name: 'Midnight'  , rating: 5 },
+  { name: 'Leo'  , rating: 6 }
+];
+
+let 
+width = 500,
+height = 300;
+
+let margin = {
+  top:50,
+  bottom:50,
+  left:50,
+  right:50 
+}
+
+let svg = d3.select('body') 
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .style('background', 'lightyellow') 
+            .style('margin', '20px')
+
+// Define the scales
+
+let yScale = d3.scaleLinear() 
+                .domain([0,10]) 
+                .range([height - margin.bottom, margin.top]) 
+
+let xScale = d3.scaleBand() 
+                .domain(data.map(d => d.name)) 
+                .range([margin.left, width - margin.right]) 
+
+
+// Draw the axis 
+
+let xAxis = svg.append('g') 
+                .call(d3.axisBottom().scale(xScale))
+                .attr('transform', `translate(0, ${height - margin.bottom})`) 
+
+let yAxis = svg.append('g') 
+                .call(d3.axisLeft().scale(yScale)) 
+                .attr('transform', `translate(${margin.left}, 0)`)
+
+// Draw a circle 
+let circle = svg.selectAll('circle') 
+                .data(data) 
+                .enter() 
+                .append('circle')
+                .attr('r', 5) 
+                .attr('cx', d => xScale(d.name) +xScale.bandwidth()/2)
+                .attr('cy', d => yScale(d.rating))
+
+
+// Draw the labels 
+svg.append('text') 
+    .attr('x', width/2) 
+    .attr('y', height - 15)
+    .text('Name') 
+    .style('text-anchor', 'middle') 
+
+svg.append('text')
+    .attr('x', 0-height/2) 
+    .attr('y', 25) 
+    .text('Rating')
+    .style('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+
+
+// Next 
+  let svg = d3.select("#vis")
+            .append('svg')
+            .attr('width', 600)
+            .attr('height', 400)
+            .style('background', 'lightyellow') 
+
+//draw a circle 
+svg.append('circle')
+    .attr('r', 100) 
+    .attr('cx', 100) 
+    .attr('cy', 100)
+    .attr('fill', 'blue');
+
+//draw a rect: x, y, width, height 
+svg.append('rect') 
+    .attr('height', 300) 
+    .attr('width', 200)
+    .attr('x', 200) 
+    .attr('y', 100)
+    .attr('fill', 'pink');
+
+//draw a line 
+svg.append('line')
+    .attr('x1', 0) 
+    .attr('y1', 400) 
+    .attr('x2', 100) 
+    .attr('y2', 300)
+    .attr('stroke', 'black') 
+    .attr('stroke-width', 2) 
+
+// BarCHART 
+
+//Define data
+let data = [
+  { name: 'Rainne'    , rating: 8 },
+  { name: 'Buddy'    , rating: 7 },
+  { name: 'Paddy'   , rating: 3 },
+  { name: 'Sticky', rating: 9 },
+  { name: 'Midnight'  , rating: 5 },
+  { name: 'Leo'  , rating: 6 }
+];
+
+let 
+  width = 600,
+  height = 400;
+
+let margin = {
+  top: 50,
+  right: 50,
+  bottom:50,
+  left: 50
+}
+
+let svg = d3.select('body') 
+            .append('svg') 
+            .attr('height', height) 
+            .attr('width', width) 
+            .style('background', 'lightyellow') 
+
+let yScale = d3.scaleLinear() 
+                .domain([0, 10]) 
+                .range([height - margin.bottom, margin.top]) 
+
+let xScale = d3.scaleBand() 
+                .domain(data.map(d => d.name)) 
+                .range([margin.left, width - margin.right]) 
+                .padding(0.5) 
+
+let yAxis = svg.append('g') 
+                .call(d3.axisLeft().scale(yScale))
+                .attr('transform', `translate(${margin.left})`) 
+
+let xAxis = svg.append('g') 
+                .call(d3.axisBottom().scale(xScale)) 
+                .attr('transform', `translate(0, ${height - margin.bottom})`) 
+
+svg.append('text')
+.attr('x', width/2) 
+.attr('y', height - 15) 
+.text('Name')
+
+svg.append('text') 
+.attr('x', 0 - height/2)
+.attr('y', 25)
+.text('Rating') 
+.attr('transform', 'rotate(-90)')
+
+
+let bar = svg.selectAll('rect') 
+              .data(data) 
+              .enter() 
+              .append('rect') 
+              .attr('x', d => xScale(d.name))
+              .attr('y', d => yScale(d.rating)) 
+              .attr('width', xScale.bandwidth()) 
+              .attr('height', d => height - margin.bottom - yScale(d.rating))
+              .attr('fill', 'darkblue') 
+
+// LINEPLOT 
+
+//Define data
+let data = [
+    { name: 'Rainne'    , rating: 8 },
+    { name: 'Buddy'    , rating: 7 },
+    { name: 'Paddy'   , rating: 3 },
+    { name: 'Sticky', rating: 9 },
+    { name: 'Midnight'  , rating: 5 },
+    { name: 'Leo'  , rating: 6 }
+  ];
+
+  
+let 
+width = 500,
+height = 300;
+
+let margin = {
+  top:50,
+  bottom:50,
+  left:50,
+  right:50 
+}
+
+let svg = d3.select('body') 
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .style('background', 'pink') 
+            .style('margin', '20px')
+
+// Define the scales
+
+let yScale = d3.scaleLinear() 
+                .domain([0,10]) 
+                .range([height - margin.bottom, margin.top]) 
+
+let xScale = d3.scaleBand() 
+                .domain(data.map(d => d.name)) 
+                .range([margin.left, width - margin.right]) 
+
+
+// Draw the axis 
+
+let xAxis = svg.append('g') 
+                .call(d3.axisBottom().scale(xScale))
+                .attr('transform', `translate(0, ${height - margin.bottom})`) 
+
+let yAxis = svg.append('g') 
+                .call(d3.axisLeft().scale(yScale)) 
+                .attr('transform', `translate(${margin.left}, 0)`)
+
+// Draw the labels 
+svg.append('text') 
+    .attr('x', width/2) 
+    .attr('y', height - 15)
+    .text('Name') 
+    .style('text-anchor', 'middle') 
+
+svg.append('text')
+    .attr('x', 0-height/2) 
+    .attr('y', 25) 
+    .text('Rating')
+    .style('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+
+let line = d3.line() 
+              .x(d => xScale(d.name) + xScale.bandwidth()/2) 
+              .y(d => yScale(d.rating))
+              .curve(d3.curveNatural) 
+
+let path = svg.append('path') 
+              .datum(data) 
+              .attr('d', line) 
+              .attr('stroke', 'blue') 
+              .attr('fill', 'none') 
+
+              
